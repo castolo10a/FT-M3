@@ -4,12 +4,7 @@ const http = require("http");
 /* AQUÍ DEBAJO PUEDES ESCRIBIR LA CONSTANTE DEL PUERTO */
 const PORT = 3001;
 
-
-
-/* ⚠️ LA LÍNEA SIGUIENTE TIENE QUE QUEDAR COMO ESTÁ PARA PODER EXPORTAR EL SERVIDOR ⚠️ */
-module.exports =
-//   /* AQUÍ DEBAJO YA PUEDES ESCRIBIR TÚ CÓDIGO REEMPLAZANDO EL VALOR DE NULL POR EL SERVIDOR */
-http.createServer((req, res) => {
+const myServer = http.createServer((req, res) => {
   console.log(`Server raised in port ${PORT}`);
   if(req.url === "/api"){
     fs.readFile("./utils/dogsData.json", (err, data) => {
@@ -36,3 +31,8 @@ http.createServer((req, res) => {
   res.writeHead(404, {'Content-Type': 'text/plain'})
   res.end("Route not found")
 }).listen(PORT, "localhost");
+
+/* ⚠️ LA LÍNEA SIGUIENTE TIENE QUE QUEDAR COMO ESTÁ PARA PODER EXPORTAR EL SERVIDOR ⚠️ */
+module.exports = 
+//   /* AQUÍ DEBAJO YA PUEDES ESCRIBIR TÚ CÓDIGO REEMPLAZANDO EL VALOR DE NULL POR EL SERVIDOR */
+myServer
