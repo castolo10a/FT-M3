@@ -1,5 +1,5 @@
-var fs = require("fs");
-var http = require("http");
+const fs = require("fs");
+const http = require("http");
 /* ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️ */
 /* AQUÍ DEBAJO PUEDES ESCRIBIR LA CONSTANTE DEL PUERTO */
 const PORT = 3001;
